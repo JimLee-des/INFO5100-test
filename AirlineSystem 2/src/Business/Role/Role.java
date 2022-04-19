@@ -17,12 +17,12 @@ import javax.swing.JPanel;
 public abstract class Role {
     
     public enum RoleType{
-        AirlineAdmin("AirlineAdmin"),
+        RailAdmin("AirlineAdmin"),
         Customer("Customer"),
         Ackemma("Ackemma"),
         MOP("MOP"),
         Seller("Seller"),
-        AircraftCrew("AircraftCrew"),
+        RailCrew("RailCrew"),
         Commander("Commander"),
         Announcer("Announcer"),
         TicketChecker("TicketChecker"),

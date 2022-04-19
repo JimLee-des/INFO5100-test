@@ -10,10 +10,7 @@ import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 import userinterface.CommanderRole.CommanderWorkAreaJPanel;
 
-/**
- *
- * @author 刘欣卓
- */
+
 public class CommanderRole extends Role{
     
     public CommanderRole(){
@@ -22,7 +19,7 @@ public class CommanderRole extends Role{
     
     @Override
     public JPanel createWorkArea(JPanel mainScreen, UserAccount userAccount, EcoSystem system) {
-        this.type = Role.RoleType.AirlineAdmin;
+        this.type = Role.RoleType.RailAdmin;
         return new CommanderWorkAreaJPanel(mainScreen, userAccount, system);
     }
     

@@ -10,10 +10,7 @@ import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 import userinterface.AckemmaRole.AckemmaWorkAreaJPanel;
 
-/**
- *
- * @author 刘欣卓
- */
+
 public class AckemmaRole extends Role{
     
     public AckemmaRole(){

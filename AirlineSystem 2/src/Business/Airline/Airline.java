@@ -10,10 +10,7 @@ import Business.Order.Order;
 import java.util.ArrayList;
 import java.util.UUID;
 
-/**
- *
- * @author harold
- */
+
 public class Airline {
     private ArrayList<Airplane> airplaneList;
     private ArrayList<Flight> flightList;

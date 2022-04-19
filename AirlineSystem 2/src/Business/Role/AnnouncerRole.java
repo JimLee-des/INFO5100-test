@@ -11,10 +11,7 @@ import javax.swing.JPanel;
 import userinterface.AnnouncerRole.AnnouncerWorkAreaJPanel;
 
 
-/**
- *
- * @author 刘欣卓
- */
+
 public class AnnouncerRole extends Role{
     
     public AnnouncerRole(){

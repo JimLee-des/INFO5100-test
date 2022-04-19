@@ -10,10 +10,7 @@ import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 import userinterface.MOPRole.MOPWorkAreaJPanel;
 
-/**
- *
- * @author 刘欣卓
- */
+
 public class MOPRole extends Role{
     
     public MOPRole(){

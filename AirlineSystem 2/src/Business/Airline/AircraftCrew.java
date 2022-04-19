@@ -5,10 +5,7 @@
  */
 package Business.Airline;
 
-/**
- *
- * @author 刘欣卓
- */
+
 public class AircraftCrew {
     private String name;
     private String status;
