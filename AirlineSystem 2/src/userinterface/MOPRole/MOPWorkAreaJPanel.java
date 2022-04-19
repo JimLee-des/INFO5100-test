@@ -14,10 +14,7 @@ import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author 刘欣卓
- */
+
 public class MOPWorkAreaJPanel extends javax.swing.JPanel {
 
     /**

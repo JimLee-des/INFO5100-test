@@ -158,8 +158,8 @@ public class TicketCheckerWorkAreaJPanel extends javax.swing.JPanel {
         for(RailLine al : system.getRailLineDirectory().getRailLineList()){
             for(Train fl : al.getFlightList()){
                 if(fl.getrailNum_id().equals((String) tblFlt.getValueAt(selectedRow, 0))){
-                    CustomerListJPanel cljp = new CustomerListJPanel(mainScreen,fl,system);
-                    mainScreen.add("CustomerListJPanel", cljp);
+                    PassengerListJPanel cljp = new PassengerListJPanel(mainScreen,fl,system);
+                    mainScreen.add("PassengerListJPanel", cljp);
                     CardLayout layout = (CardLayout) mainScreen.getLayout();
                     layout.next(mainScreen);
                 }

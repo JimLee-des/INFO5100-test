@@ -18,15 +18,15 @@ import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
 
-public class ManageAirlineAdminJPanel extends javax.swing.JPanel {
+public class ManageRailAdminJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form ManageAirlineAdminJPanel
+     * Creates new form ManageRailAdminJPanel
      */
     JPanel mainScreen;
     EcoSystem system;
     UserAccount userAccount;
-    public ManageAirlineAdminJPanel(JPanel mainScreen, EcoSystem system) {
+    public ManageRailAdminJPanel(JPanel mainScreen, EcoSystem system) {
         initComponents();
         this.mainScreen = mainScreen;
         this.system = system;
@@ -346,7 +346,7 @@ public class ManageAirlineAdminJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) tblAla.getModel();
         model.setRowCount(0);
         for (UserAccount user : system.getUserAccountDirectory().getUserAccountList()) {
-            if ("Business.Role.AirlineAdminRole".equals(user.getRole().toString())) {
+            if ("Business.Role.RailAdminRole".equals(user.getRole().toString())) {
                 Object[] row = new Object[3];
                 row[0] = user.getName();
                 row[1] = user.getUsername();

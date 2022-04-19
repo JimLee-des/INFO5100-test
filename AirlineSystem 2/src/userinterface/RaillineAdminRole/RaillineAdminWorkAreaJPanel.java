@@ -134,24 +134,24 @@ public class RaillineAdminWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnManageAirplaneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageAirplaneActionPerformed
         // TODO add your handling code here:
-        ManageAirplaneJPanel majp = new ManageAirplaneJPanel(mainScreen, userAccount, system);
-        mainScreen.add("ManageAirplaneJPanel", majp);
+        ManageRailJPanel majp = new ManageRailJPanel(mainScreen, userAccount, system);
+        mainScreen.add("ManageRailJPanel", majp);
         CardLayout layout = (CardLayout) mainScreen.getLayout();
         layout.next(mainScreen);
     }//GEN-LAST:event_btnManageAirplaneActionPerformed
 
     private void btnManageFlightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageFlightActionPerformed
         // TODO add your handling code here:
-        ManageFlightJPanel mfjp = new ManageFlightJPanel(mainScreen, userAccount, system);
-        mainScreen.add("ManageFlightJPanel", mfjp);
+        ManageTrainJPanel mfjp = new ManageTrainJPanel(mainScreen, userAccount, system);
+        mainScreen.add("ManageTrainJPanel", mfjp);
         CardLayout layout = (CardLayout) mainScreen.getLayout();
         layout.next(mainScreen);
     }//GEN-LAST:event_btnManageFlightActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        ManageAircraftCrewJPanel macjp = new ManageAircraftCrewJPanel(mainScreen, userAccount, system);
-        mainScreen.add("ManageAircraftCrewJPanel", macjp);
+        ManageRailCrewJPanel macjp = new ManageRailCrewJPanel(mainScreen, userAccount, system);
+        mainScreen.add("ManageRailCrewJPanel", macjp);
         CardLayout layout = (CardLayout) mainScreen.getLayout();
         layout.next(mainScreen);
     }//GEN-LAST:event_jButton3ActionPerformed

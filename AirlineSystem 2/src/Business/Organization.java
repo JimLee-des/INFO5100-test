@@ -23,20 +23,20 @@ public abstract class Organization {
     private int organizationID;
     private static int counter=0;
     
-    public enum Type{
-        RestaurantAdmin("RestaurantAdmin"),
-        Customer("Customer"),
-        DeliveryMan("Delivery"),
-        SysAdmin("Sysadmin");
-        
-        private String value;
-        private Type(String value) {
-            this.value = value;
-        }
-        public String getValue() {
-            return value;
-        }
-    }
+//    public enum Type{
+//        RestaurantAdmin("RestaurantAdmin"),
+//        Passenger("Passenger"),
+//        DeliveryMan("Delivery"),
+//        SysAdmin("Sysadmin");
+//        
+//        private String value;
+//        private Type(String value) {
+//            this.value = value;
+//        }
+//        public String getValue() {
+//            return value;
+//        }
+//    }
 
     public Organization(String name) {
         this.name = name;

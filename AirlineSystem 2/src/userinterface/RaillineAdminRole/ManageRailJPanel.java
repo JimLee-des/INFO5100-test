@@ -24,15 +24,15 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author 刘欣卓
  */
-public class ManageAirplaneJPanel extends javax.swing.JPanel {
+public class ManageRailJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form ManageAirplaneJPanel
+     * Creates new form ManageRailJPanel
      */
     private JPanel mainScreen;
     private UserAccount userAccount;
     private EcoSystem system;
-    public ManageAirplaneJPanel(JPanel mainScreen, UserAccount userAccount, EcoSystem system) {
+    public ManageRailJPanel(JPanel mainScreen, UserAccount userAccount, EcoSystem system) {
         initComponents();
         this.mainScreen = mainScreen;
         this.userAccount = userAccount;

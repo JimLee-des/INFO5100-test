@@ -14,15 +14,15 @@ import java.awt.CardLayout;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
-public class CustomerListJPanel extends javax.swing.JPanel {
+public class PassengerListJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form CustomerListJPanel
+     * Creates new form PassengerListJPanel
      */
     private JPanel mainScreen;
     private Train train;
     private EcoSystem system;
-    public CustomerListJPanel(JPanel mainScreen, Train train, EcoSystem system) {
+    public PassengerListJPanel(JPanel mainScreen, Train train, EcoSystem system) {
         initComponents();
         this.mainScreen = mainScreen;
         this.train = train;

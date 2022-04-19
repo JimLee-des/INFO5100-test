@@ -8,7 +8,7 @@ package Business.Role;
 import Business.EcoSystem;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
-import userinterface.CustomerRole.CustomerAreaJPanel;
+import userinterface.PassengerRole.PassengerAreaJPanel;
 import userinterface.TicketCheckerRole.TicketCheckerWorkAreaJPanel;
 
 /**

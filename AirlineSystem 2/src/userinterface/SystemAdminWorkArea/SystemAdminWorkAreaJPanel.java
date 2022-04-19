@@ -176,16 +176,16 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomerActionPerformed
         // TODO add your handling code here:
-        ManageCustomerJPanel mcjp = new ManageCustomerJPanel(mainScreen,system);
-        mainScreen.add("ManageCustomerJPanel", mcjp);
+        ManagePassengerJPanel mcjp = new ManagePassengerJPanel(mainScreen,system);
+        mainScreen.add("ManagePassengerJPanel", mcjp);
         CardLayout layout = (CardLayout) mainScreen.getLayout();
         layout.next(mainScreen);
     }//GEN-LAST:event_btnCustomerActionPerformed
 
     private void btnManageAAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageAAActionPerformed
         // TODO add your handling code here:
-        ManageAirlineAdminJPanel maajp = new ManageAirlineAdminJPanel(mainScreen,system);
-        mainScreen.add("ManageAirlineAdminJPanel", maajp);
+        ManageRailAdminJPanel maajp = new ManageRailAdminJPanel(mainScreen,system);
+        mainScreen.add("ManageRailAdminJPanel", maajp);
         CardLayout layout = (CardLayout) mainScreen.getLayout();
         layout.next(mainScreen);
     }//GEN-LAST:event_btnManageAAActionPerformed

@@ -24,15 +24,15 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author 刘欣卓
  */
-public class ManageCustomerJPanel extends javax.swing.JPanel {
+public class ManagePassengerJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form ManageCustomerJPanel
+     * Creates new form ManagePassengerJPanel
      */
     JPanel mainScreen;
     EcoSystem system;
     UserAccount userAccount;
-    public ManageCustomerJPanel(JPanel mainScreen, EcoSystem system) {
+    public ManagePassengerJPanel(JPanel mainScreen, EcoSystem system) {
         initComponents();
         this.mainScreen = mainScreen;
         this.system = system;
@@ -408,7 +408,7 @@ public class ManageCustomerJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) tblCustomer.getModel();
         model.setRowCount(0);
         for (UserAccount user : system.getUserAccountDirectory().getUserAccountList()) {
-            if ("Business.Role.CustomerRole".equals(user.getRole().toString())) {
+            if ("Business.Role.PassengerRole".equals(user.getRole().toString())) {
                 Object[] row = new Object[5];
                 row[0] = user.getUsername();
                 row[1] = user.getPassword();

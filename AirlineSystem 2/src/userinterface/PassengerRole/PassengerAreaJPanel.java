@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.CustomerRole;
+package userinterface.PassengerRole;
 
 import Business.Railline.RailLine;
 import Business.Railline.Train;
@@ -20,7 +20,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author raunak
  */
-public class CustomerAreaJPanel extends javax.swing.JPanel {
+public class PassengerAreaJPanel extends javax.swing.JPanel {
 
     private JPanel mainScreen;
     private UserAccount userAccount;
@@ -29,7 +29,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
     /**
      * Creates new form DoctorWorkAreaJPanel
      */
-    public CustomerAreaJPanel(JPanel mainScreen, UserAccount userAccount, EcoSystem system) {
+    public PassengerAreaJPanel(JPanel mainScreen, UserAccount userAccount, EcoSystem system) {
         initComponents();
         this.mainScreen = mainScreen;
         this.userAccount = userAccount;

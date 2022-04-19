@@ -19,15 +19,15 @@ import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
 
-public class ManageFlightJPanel extends javax.swing.JPanel {
+public class ManageTrainJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form ManageFlightJPanel
+     * Creates new form ManageTrainJPanel
      */
     private JPanel mainScreen;
     private UserAccount userAccount;
     private EcoSystem system;
-    public ManageFlightJPanel(JPanel mainScreen, UserAccount userAccount, EcoSystem system) {
+    public ManageTrainJPanel(JPanel mainScreen, UserAccount userAccount, EcoSystem system) {
         initComponents();
         this.mainScreen = mainScreen;
         this.userAccount = userAccount;

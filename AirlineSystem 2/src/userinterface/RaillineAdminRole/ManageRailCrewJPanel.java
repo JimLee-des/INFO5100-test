@@ -19,15 +19,15 @@ import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
 
-public class ManageAircraftCrewJPanel extends javax.swing.JPanel {
+public class ManageRailCrewJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form ManageAircraftCrewJPanel
+     * Creates new form ManageRailCrewJPanel
      */
     private JPanel mainScreen;
     private UserAccount userAccount;
     private EcoSystem system;
-    public ManageAircraftCrewJPanel(JPanel mainScreen, UserAccount userAccount, EcoSystem system) {
+    public ManageRailCrewJPanel(JPanel mainScreen, UserAccount userAccount, EcoSystem system) {
         initComponents();
         this.mainScreen = mainScreen;
         this.userAccount = userAccount;
@@ -464,7 +464,7 @@ public class ManageAircraftCrewJPanel extends javax.swing.JPanel {
                     for (UserAccount user : system.getUserAccountDirectory().getUserAccountList()) {
                         if(user.getName()==null){
                             continue;
-                        }else if("Business.Role.AircraftCrewRole".equals(user.getRole().toString()) && user.getName().equals(ac.getName())) {
+                        }else if("Business.Role.RailCrewRole".equals(user.getRole().toString()) && user.getName().equals(ac.getName())) {
                             row[1] = user.getUsername();
                             row[2] = user.getPassword();
                         }

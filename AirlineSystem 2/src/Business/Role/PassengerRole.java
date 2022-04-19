@@ -9,7 +9,7 @@ import Business.EcoSystem;
 
 import Business.Organization;
 import Business.UserAccount.UserAccount;
-import userinterface.CustomerRole.CustomerAreaJPanel;
+import userinterface.PassengerRole.PassengerAreaJPanel;
 import javax.swing.JPanel;
 
 
@@ -22,7 +22,7 @@ public class PassengerRole extends Role{
     @Override
     public JPanel createWorkArea(JPanel mainScreen, UserAccount userAccount, EcoSystem system) {
         this.type = RoleType.Passenger;
-        return new CustomerAreaJPanel(mainScreen, userAccount, system);
+        return new PassengerAreaJPanel(mainScreen, userAccount, system);
     }
 
     
