@@ -7,32 +7,29 @@ package Business.Order;
 
 import java.util.UUID;
 
-/**
- *
- * @author 刘欣卓
- */
+// 
 public class Order {
     private String order_id;
     private String customerName;
-    private String flight_id;;
+    private String railNum_id;;
     private String originalplace;
     private String destinationplace;
     private String departureTime;
     private String arrivingTime;
-    private String airplane_id;
+    private String rail_id;
     private String cost;
     private boolean status;
     private String airline;
     private boolean insurance; 
 
-    public Order(String customerName, String flight_id, String originalplace, String destinationplace, String departureTime, String arrivingTime,  String airplane_id, String cost, String airline, boolean insurance) {
+    public Order(String customerName, String railNum_id, String originalplace, String destinationplace, String departureTime, String arrivingTime,  String rail_id, String cost, String airline, boolean insurance) {
         this.customerName = customerName;
-        this.flight_id = flight_id;
+        this.railNum_id = railNum_id;
         this.originalplace = originalplace;
         this.destinationplace = destinationplace;
         this.departureTime = departureTime;
         this.arrivingTime = arrivingTime;
-        this.airplane_id = airplane_id;
+        this.rail_id = rail_id;
         this.cost = cost;
         this.airline = airline;
         this.insurance = insurance;
@@ -63,12 +60,12 @@ public class Order {
         this.arrivingTime = arrivingTime;
     }
 
-    public String getAirplane_id() {
-        return airplane_id;
+    public String getRail_id() {
+        return rail_id;
     }
 
-    public void setAirplane_id(String airplane_id) {
-        this.airplane_id = airplane_id;
+    public void setRail_id(String rail_id) {
+        this.rail_id = rail_id;
     }
 
     public String getOrder_id() {
@@ -87,12 +84,12 @@ public class Order {
         this.customerName = customerName;
     }
 
-    public String getFlight_id() {
-        return flight_id;
+    public String getRailNum_id() {
+        return railNum_id;
     }
 
-    public void setFlight_id(String flight_id) {
-        this.flight_id = flight_id;
+    public void setRailNum_id(String railNum_id) {
+        this.railNum_id = railNum_id;
     }
 
     public String getOriginalplace() {

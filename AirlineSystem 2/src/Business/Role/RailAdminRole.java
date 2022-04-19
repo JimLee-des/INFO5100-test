@@ -15,7 +15,7 @@ public class RailAdminRole extends Role{
     public RailAdminRole(){
         this.type = Role.RoleType.RailAdmin;
     }
-    
+
     @Override
     public JPanel createWorkArea(JPanel mainScreen, UserAccount userAccount, EcoSystem system) {
         this.type = Role.RoleType.RailAdmin;

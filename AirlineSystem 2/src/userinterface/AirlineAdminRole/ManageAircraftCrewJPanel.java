@@ -8,7 +8,7 @@ package userinterface.AirlineAdminRole;
 import Business.Airline.AircraftCrew;
 import Business.Airline.Airline;
 import Business.EcoSystem;
-import Business.Role.AircraftCrewRole;
+import Business.Role.RailCrewRole;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
@@ -18,10 +18,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author 刘欣卓
- */
+
 public class ManageAircraftCrewJPanel extends javax.swing.JPanel {
 
     /**
@@ -325,7 +322,7 @@ public class ManageAircraftCrewJPanel extends javax.swing.JPanel {
         if (system.getUserAccountDirectory().checkIfUsernameIsUnique(uname)==false) {
             JOptionPane.showMessageDialog(this,"It is already existed.");
         }else{
-            system.getUserAccountDirectory().createUserAccount(name, uname,pwd,new AircraftCrewRole());
+            system.getUserAccountDirectory().createUserAccount(name, uname,pwd,new RailCrewRole());
             for(Airline al : system.getAirlineDirectory().getAirlineList()){
                 if(al.getName().equals(userAccount.getName())){
                     al.addAircraftCrew(name);
