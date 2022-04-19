@@ -14,10 +14,6 @@ import java.awt.CardLayout;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author 刘欣卓
- */
 public class CustomerListJPanel extends javax.swing.JPanel {
 
     /**
@@ -124,7 +120,7 @@ public class CustomerListJPanel extends javax.swing.JPanel {
             row[1] = cus.getPassportNum();
             row[2] = cus.getTelNum();
             for(Order order : cus.getOrderList()){
-                if(order.getFlight_id().equals(flight.getFlight_id())){
+                if(order.getRailNum_id().equals(flight.getFlight_id())){
                     row[3] = order.isInsurance() ? "Bought" : "Not Bought";
                 }
             }

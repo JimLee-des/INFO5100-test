@@ -14,10 +14,7 @@ import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author 刘欣卓
- */
+
 public class SellerWorkAreaJPanel extends javax.swing.JPanel {
 
     /**
@@ -148,7 +145,7 @@ public class SellerWorkAreaJPanel extends javax.swing.JPanel {
                         row[0] = cus.getName();
                         row[1] = cus.getTelNum();
                         row[2] = cus.getPassportNum();
-                        row[3] = order.getFlight_id();
+                        row[3] = order.getRailNum_id();
                         model.addRow(row);
                     }
                 }

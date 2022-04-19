@@ -72,7 +72,7 @@ public class Customer {
 
     public boolean checkIfOrderIsUnique(Order order){
         for(Order od : orderList){
-            if(od.getFlight_id().equals(order.getFlight_id()) && od.isStatus()==false){
+            if(od.get().equals(order.getFlight_id()) && od.isStatus()==false){
                 return true;
             }
         }

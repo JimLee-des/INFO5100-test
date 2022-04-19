@@ -5,10 +5,7 @@
  */
 package Business.InsuranceCom;
 
-/**
- *
- * @author harold
- */
+
 public class InsuranceCom {
     
 }

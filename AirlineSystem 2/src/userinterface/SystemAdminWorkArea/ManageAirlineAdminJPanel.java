@@ -7,7 +7,7 @@ package userinterface.SystemAdminWorkArea;
 
 import Business.Airline.Airline;
 import Business.EcoSystem;
-import Business.Role.AirlineAdminRole;
+import Business.Role.RailAdminRole;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
@@ -17,10 +17,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author 刘欣卓
- */
+
 public class ManageAirlineAdminJPanel extends javax.swing.JPanel {
 
     /**
@@ -247,7 +244,7 @@ public class ManageAirlineAdminJPanel extends javax.swing.JPanel {
         if (system.getUserAccountDirectory().checkIfUsernameIsUnique(uname)==false) {
             JOptionPane.showMessageDialog(this,"It is already existing ");
         }else{
-            UserAccount ua1 =system.getUserAccountDirectory().createUserAccount(name, uname, password, new AirlineAdminRole());
+            UserAccount ua1 =system.getUserAccountDirectory().createUserAccount(name, uname, password, new RailAdminRole());
             Airline airline= system.getAirlineDirectory().createAirlineInfo(name);
             populatetblAla();
             txtName.setText("");

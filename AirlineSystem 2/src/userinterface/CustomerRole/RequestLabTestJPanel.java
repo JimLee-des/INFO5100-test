@@ -167,10 +167,10 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
             for(Order od : cust.getOrderList()){
                 if(od.getCustomerName().equals(userAccount.getName())){
                     Object[] row = new Object[10];
-                    row[0] = od.getFlight_id();
+                    row[0] = od.getRailNum_id();
                     row[1] = od.getOriginalplace();
                     row[2] = od.getDestinationplace();
-                    row[3] = od.getAirplane_id();
+                    row[3] = od.getRail_id();
                     row[4] = od.getDepartureTime();
                     row[5] = od.getArrivingTime();
                     row[6] = od.getCost();

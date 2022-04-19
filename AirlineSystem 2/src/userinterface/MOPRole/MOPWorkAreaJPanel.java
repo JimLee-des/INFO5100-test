@@ -148,12 +148,12 @@ public class MOPWorkAreaJPanel extends javax.swing.JPanel {
             for(Flight fl : al.getFlightList()){
                 for(Order order : al.getOrderList()){
                     for(Customer cus : system.getCustomerDirectory().getCustList()){
-                        if(order.isStatus() && order.getCustomerName().equals(cus.getName()) && order.isInsurance() && fl.getFlight_id().equals(order.getFlight_id()) && fl.isTimeStatus()==true){
+                        if(order.isStatus() && order.getCustomerName().equals(cus.getName()) && order.isInsurance() && fl.getFlight_id().equals(order.getRailNum_id()) && fl.isTimeStatus()==true){
                             Object[] row = new Object[4];
                             row[0] = cus.getName();
                             row[1] = cus.getTelNum();
                             row[2] = cus.getPassportNum();
-                            row[3] = order.getFlight_id();
+                            row[3] = order.getRailNum_id();
                             model.addRow(row);
                         }
                     }

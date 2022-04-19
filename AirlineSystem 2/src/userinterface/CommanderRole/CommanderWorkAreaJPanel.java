@@ -128,7 +128,7 @@ public class CommanderWorkAreaJPanel extends javax.swing.JPanel {
                     fl.setStatus(true);
                     for(Customer cus : fl.getCustomerList()){
                         for(Order order : cus.getOrderList()){
-                            if(order.getFlight_id().equals((String) tblFlt.getValueAt(selectedRow, 0))){
+                            if(order.getRailNum_id().equals((String) tblFlt.getValueAt(selectedRow, 0))){
                                 order.setStatus(true);
                             }
                         }
