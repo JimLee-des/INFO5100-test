@@ -13,10 +13,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author raunak
- */
+
 public class AircraftCrewWorkAreaJPanel extends javax.swing.JPanel {
 
     JPanel mainScreen;
@@ -112,7 +109,7 @@ public class AircraftCrewWorkAreaJPanel extends javax.swing.JPanel {
     private void btnAssignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignActionPerformed
         // TODO add your handling code here:
         int selectedRow = tblFlt.getSelectedRow();
-        for(RailLine al : system.getAirlineDirectory().getAirlineList()){
+        for(RailLine al : system.getRailLineDirectory().getRailLineList()){
             for(RailCrew ac : al.getAircraftcrewList()){
                 if(ac.getName().equals(userAccount.getName())){
                     if(selectedRow>=0){
@@ -120,7 +117,7 @@ public class AircraftCrewWorkAreaJPanel extends javax.swing.JPanel {
                         for(Train fl : al.getFlightList()){
                             if(fl.getFlight_id().equals((String) tblFlt.getValueAt(selectedRow, 0))){
                                 fl.setReadyStatus(true);
-                                ac.setFlight(fl.getFlight_id());
+                                ac.setTrain(fl.getFlight_id());
                             }
                         }
                     }else{
@@ -143,7 +140,7 @@ public class AircraftCrewWorkAreaJPanel extends javax.swing.JPanel {
     private void populatetblFlt() {
         DefaultTableModel model = (DefaultTableModel) tblFlt.getModel();
         model.setRowCount(0);
-        for (RailLine al : system.getAirlineDirectory().getAirlineList()) {
+        for (RailLine al : system.getRailLineDirectory().getRailLineList()) {
             for(Train fl : al.getFlightList()){
                 if(fl.getAirplane_id() != null && fl.isStatus()==false){
                     Object[] row = new Object[8];

@@ -7,7 +7,7 @@ package userinterface.CommanderRole;
 
 import Business.Airline.RailLine;
 import Business.Airline.Train;
-import Business.Customer.Customer;
+import Business.Customer.Passenger;
 import Business.EcoSystem;
 import Business.Order.Order;
 import Business.UserAccount.UserAccount;
@@ -122,11 +122,11 @@ public class CommanderWorkAreaJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         int selectedRow = tblFlt.getSelectedRow();
         
-        for(RailLine al : system.getAirlineDirectory().getAirlineList()){
+        for(RailLine al : system.getRailLineDirectory().getRailLineList()){
             for(Train fl : al.getFlightList()){
                 if(fl.getFlight_id().equals((String) tblFlt.getValueAt(selectedRow, 0))){
                     fl.setStatus(true);
-                    for(Customer cus : fl.getCustomerList()){
+                    for(Passenger cus : fl.getCustomerList()){
                         for(Order order : cus.getOrderList()){
                             if(order.getRailNum_id().equals((String) tblFlt.getValueAt(selectedRow, 0))){
                                 order.setStatus(true);
@@ -149,7 +149,7 @@ public class CommanderWorkAreaJPanel extends javax.swing.JPanel {
     private void populatetblFlt() {
         DefaultTableModel model = (DefaultTableModel) tblFlt.getModel();
         model.setRowCount(0);
-        for (RailLine al : system.getAirlineDirectory().getAirlineList()) {
+        for (RailLine al : system.getRailLineDirectory().getRailLineList()) {
             for(Train fl : al.getFlightList()){
                 if(fl.isCustomerStatus()){
                     Object[] row = new Object[8];

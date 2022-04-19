@@ -11,23 +11,23 @@ import java.util.ArrayList;
  *
  * @author harold
  */
-public class CustomerDirectory {
-    private ArrayList<Customer> customerList;
+public class PassengerDirectory {
+    private ArrayList<Passenger> customerList;
     
-    public ArrayList<Customer> getCustList() {
+    public ArrayList<Passenger> getCustList() {
         return customerList;
     }
     
-    public void setCustList(ArrayList<Customer> custList) {
+    public void setCustList(ArrayList<Passenger> custList) {
         this.customerList = custList;
     }
     
-    public CustomerDirectory(){
-        this.customerList = new ArrayList<Customer>();
+    public PassengerDirectory(){
+        this.customerList = new ArrayList<Passenger>();
     }
     
-    public Customer createCustomer(String name, String ppn, String tn){
-        Customer customer= new Customer(name, ppn, tn);
+    public Passenger createCustomer(String name, String ppn, String tn){
+        Passenger customer= new Passenger(name, ppn, tn);
         customerList.add(customer);
         return customer;
     }

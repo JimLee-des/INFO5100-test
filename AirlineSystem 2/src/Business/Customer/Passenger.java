@@ -9,15 +9,15 @@ import Business.Order.Order;
 import java.util.ArrayList;
 
 
-public class Customer {
+public class Passenger {
     private String Name;
     private ArrayList<Order> orderList;
-    private String passportNum;
+    private String passengerId;
     private String telNum;
     
-    public Customer(String name, String ppn, String tn){
+    public Passenger(String name, String ppn, String tn){
         this.Name = name;
-        this.passportNum = ppn;
+        this.passengerId = ppn;
         this.telNum = tn;
         orderList = new ArrayList<Order>();
     }
@@ -52,11 +52,11 @@ public class Customer {
     }
 
     public String getPassportNum() {
-        return passportNum;
+        return passengerId;
     }
 
-    public void setPassportNum(String passportNum) {
-        this.passportNum = passportNum;
+    public void setPassportNum(String passengerId) {
+        this.passengerId = passengerId;
     }
 
     public String getTelNum() {

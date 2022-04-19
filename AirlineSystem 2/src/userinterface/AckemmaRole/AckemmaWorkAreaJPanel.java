@@ -13,10 +13,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author 刘欣卓
- */
+
 public class AckemmaWorkAreaJPanel extends javax.swing.JPanel {
 
     /**
@@ -173,7 +170,7 @@ public class AckemmaWorkAreaJPanel extends javax.swing.JPanel {
     private void populatetblAp() {
         DefaultTableModel model = (DefaultTableModel) tblAp.getModel();
         model.setRowCount(0);
-        for (RailLine al : system.getAirlineDirectory().getAirlineList()){
+        for (RailLine al : system.getRailLineDirectory().getRailLineList()){
                 for(Rail ap : al.getAirplaneList()){
                     Object[] row = new Object[4];
                     row[0] = ap.getId();

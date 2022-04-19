@@ -323,7 +323,7 @@ public class ManageAircraftCrewJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this,"It is already existed.");
         }else{
             system.getUserAccountDirectory().createUserAccount(name, uname,pwd,new RailCrewRole());
-            for(RailLine al : system.getAirlineDirectory().getAirlineList()){
+            for(RailLine al : system.getRailLineDirectory().getRailLineList()){
                 if(al.getName().equals(userAccount.getName())){
                     al.addAircraftCrew(name);
                     System.out.println(al.getAircraftcrewList());
@@ -358,7 +358,7 @@ public class ManageAircraftCrewJPanel extends javax.swing.JPanel {
             String pwd= (String) tblAc.getValueAt(selectedRow, 2);
             UserAccount user=system.getUserAccountDirectory().authenticateUser(username, pwd);
             system.getUserAccountDirectory().deleteUserAccount(user);
-            for(RailLine al : system.getAirlineDirectory().getAirlineList()){
+            for(RailLine al : system.getRailLineDirectory().getRailLineList()){
                 if(al.getName().equals(userAccount.getName())){
                     al.deleteAircraftCrew(name);
                 }
@@ -388,7 +388,7 @@ public class ManageAircraftCrewJPanel extends javax.swing.JPanel {
                     //                    system.getUserAccountDirectory().updateUserAccount(ua,uname,password);
                     //                }
             }
-            for(RailLine al : system.getAirlineDirectory().getAirlineList()){
+            for(RailLine al : system.getRailLineDirectory().getRailLineList()){
                 if(al.getName().equals(userAccount.getName())){
                     for(RailCrew ac :al.getAircraftcrewList()){
                         if(ac.getName().equals((String) tblAc.getValueAt(selectRow, 0))){
@@ -456,7 +456,7 @@ public class ManageAircraftCrewJPanel extends javax.swing.JPanel {
     private void populatetblAc() {
         DefaultTableModel model = (DefaultTableModel) tblAc.getModel();
         model.setRowCount(0);
-        for (RailLine al : system.getAirlineDirectory().getAirlineList()){
+        for (RailLine al : system.getRailLineDirectory().getRailLineList()){
             if(al.getName().equals(userAccount.getName())){
                 for(RailCrew ac : al.getAircraftcrewList()){
                     Object[] row = new Object[3];

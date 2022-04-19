@@ -6,7 +6,7 @@
 package userinterface.TicketCheckerRole;
 
 import Business.Airline.Train;
-import Business.Customer.Customer;
+import Business.Customer.Passenger;
 import Business.EcoSystem;
 import Business.Order.Order;
 import Business.UserAccount.UserAccount;
@@ -114,7 +114,7 @@ public class CustomerListJPanel extends javax.swing.JPanel {
     private void populatetblCus() {
         DefaultTableModel model = (DefaultTableModel) tblCus.getModel();
         model.setRowCount(0);
-        for(Customer cus : flight.getCustomerList()){
+        for(Passenger cus : flight.getCustomerList()){
             Object[] row = new Object[4];
             row[0] = cus.getName();
             row[1] = cus.getPassportNum();

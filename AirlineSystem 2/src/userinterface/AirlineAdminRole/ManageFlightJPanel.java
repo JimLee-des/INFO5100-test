@@ -18,10 +18,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author 刘欣卓
- */
+
 public class ManageFlightJPanel extends javax.swing.JPanel {
 
     /**
@@ -321,7 +318,7 @@ public class ManageFlightJPanel extends javax.swing.JPanel {
         String cos = txtCos.getText();
         int selectRow = tblFlt.getSelectedRow();
 
-        for (RailLine al : system.getAirlineDirectory().getAirlineList()) {
+        for (RailLine al : system.getRailLineDirectory().getRailLineList()) {
             if(al.getName().equals(userAccount.getName())){
                 for(int i = 0; i<al.getFlightList().size(); i++){
                     if(al.getFlightList().get(i).getFlight_id().equals((String) tblFlt.getValueAt(selectRow, 0))){
@@ -396,7 +393,7 @@ public class ManageFlightJPanel extends javax.swing.JPanel {
         String arr = txtArr.getText();
         String cos = txtCos.getText();
 
-        for (RailLine al : system.getAirlineDirectory().getAirlineList()) {
+        for (RailLine al : system.getRailLineDirectory().getRailLineList()) {
             if(al.getName().equals(userAccount.getName())){
                 if (al.checkIfFlightIsUnique(fid)==false) {
                     JOptionPane.showMessageDialog(this,"It is already existing ");
@@ -419,7 +416,7 @@ public class ManageFlightJPanel extends javax.swing.JPanel {
         int selectedRow = tblFlt.getSelectedRow();
         if(selectedRow>=0){
             String id = (String) tblFlt.getValueAt(selectedRow, 0);
-            for (RailLine al : system.getAirlineDirectory().getAirlineList()) {
+            for (RailLine al : system.getRailLineDirectory().getRailLineList()) {
                 if(al.getName().equals(userAccount.getName())){
                     al.deleteFlight(id);
                 }
@@ -458,7 +455,7 @@ public class ManageFlightJPanel extends javax.swing.JPanel {
     private void populatetblFlt() {
         DefaultTableModel model = (DefaultTableModel) tblFlt.getModel();
         model.setRowCount(0);
-        for (RailLine al : system.getAirlineDirectory().getAirlineList()) {
+        for (RailLine al : system.getRailLineDirectory().getRailLineList()) {
             if(al.getName().equals(userAccount.getName())){
                 for(Train fl : al.getFlightList()){
                     if(fl.isStatus()==false){

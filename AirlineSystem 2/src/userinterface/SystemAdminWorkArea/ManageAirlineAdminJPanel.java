@@ -245,7 +245,7 @@ public class ManageAirlineAdminJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this,"It is already existing ");
         }else{
             UserAccount ua1 =system.getUserAccountDirectory().createUserAccount(name, uname, password, new RailAdminRole());
-            RailLine airline= system.getAirlineDirectory().createAirlineInfo(name);
+            RailLine airline= system.getRailLineDirectory().createRailLineInfo(name);
             populatetblAla();
             txtName.setText("");
             txtUsername.setText("");
@@ -262,7 +262,7 @@ public class ManageAirlineAdminJPanel extends javax.swing.JPanel {
             String pwd= (String) tblAla.getValueAt(selectedRow, 2);
             UserAccount user=system.getUserAccountDirectory().authenticateUser(username, pwd);
             system.getUserAccountDirectory().deleteUserAccount(user);
-            system.getAirlineDirectory().deleteAirline(name);
+            system.getRailLineDirectory().deleteRailLine(name);
             populatetblAla();
         }else{
             JOptionPane.showMessageDialog(null, "Please select a Row!!");

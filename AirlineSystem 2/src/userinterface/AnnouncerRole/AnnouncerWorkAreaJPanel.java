@@ -135,7 +135,7 @@ public class AnnouncerWorkAreaJPanel extends javax.swing.JPanel {
     private void populatetblFlt() {
         DefaultTableModel model = (DefaultTableModel) tblFlt.getModel();
         model.setRowCount(0);
-        for (RailLine al : system.getAirlineDirectory().getAirlineList()) {
+        for (RailLine al : system.getRailLineDirectory().getRailLineList()) {
             for(Train fl : al.getFlightList()){
                 if(fl.isReadyStatus()){
                     Object[] row = new Object[8];

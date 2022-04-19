@@ -5,7 +5,7 @@
 package userinterface.CustomerRole;
 
 import Business.Airline.RailLine;
-import Business.Customer.Customer;
+import Business.Customer.Passenger;
 import Business.EcoSystem;
 import Business.Order.Order;
 import Business.UserAccount.UserAccount;
@@ -135,11 +135,11 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
         if(selectedRow<0){
             JOptionPane.showMessageDialog(this,"Please select a row from the table to cancel","Warning",JOptionPane.WARNING_MESSAGE);
         }else{
-            for (RailLine al : system.getAirlineDirectory().getAirlineList()){
+            for (RailLine al : system.getRailLineDirectory().getRailLineList()){
                 for (Order od : al.getOrderList()){
                     if(od.getOrder_id().equals((String) tblFlt.getValueAt(selectedRow, 6))){
                         al.deleteOrder(od.toString());
-                        for(Customer cust : system.getCustomerDirectory().getCustList()){
+                        for(Passenger cust : system.getCustomerDirectory().getCustList()){
                             if(cust.getName().equals(userAccount.getName())){
                                 cust.deleteOrder(od);
                             }
@@ -163,7 +163,7 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
     private void populateFlt() {
         DefaultTableModel model = (DefaultTableModel) tblFlt.getModel();
         model.setRowCount(0);
-        for (Customer cust : system.getCustomerDirectory().getCustList()) {
+        for (Passenger cust : system.getCustomerDirectory().getCustList()) {
             for(Order od : cust.getOrderList()){
                 if(od.getCustomerName().equals(userAccount.getName())){
                     Object[] row = new Object[10];

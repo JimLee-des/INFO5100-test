@@ -9,20 +9,20 @@ package Business.Airline;
 public class RailCrew {
     private String name;
     private String status;
-    private String flight;
+    private String train;
 
     public RailCrew(String name){
         this.name = name;
         this.status = "Not Working";
-        this.flight = "Not Assigned";
+        this.train = "Not Assigned";
     }
     
-    public String getFlight() {
-        return flight;
+    public String getTrain() {
+        return train;
     }
 
-    public void setFlight(String flight) {
-        this.flight = flight;
+    public void setTrain(String train) {
+        this.train = train;
     }
 
     public String getStatus() {

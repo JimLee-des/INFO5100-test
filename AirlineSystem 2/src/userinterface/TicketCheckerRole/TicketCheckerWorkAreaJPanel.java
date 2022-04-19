@@ -140,7 +140,7 @@ public class TicketCheckerWorkAreaJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         int selectedRow = tblFlt.getSelectedRow();
         
-        for(RailLine al : system.getAirlineDirectory().getAirlineList()){
+        for(RailLine al : system.getRailLineDirectory().getRailLineList()){
             for(Train fl : al.getFlightList()){
                 if(fl.getFlight_id().equals((String) tblFlt.getValueAt(selectedRow, 0))){
                     fl.setCustomerStatus(true);
@@ -155,7 +155,7 @@ public class TicketCheckerWorkAreaJPanel extends javax.swing.JPanel {
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
         // TODO add your handling code here:
         int selectedRow = tblFlt.getSelectedRow();
-        for(RailLine al : system.getAirlineDirectory().getAirlineList()){
+        for(RailLine al : system.getRailLineDirectory().getRailLineList()){
             for(Train fl : al.getFlightList()){
                 if(fl.getFlight_id().equals((String) tblFlt.getValueAt(selectedRow, 0))){
                     CustomerListJPanel cljp = new CustomerListJPanel(mainScreen,fl,system);
@@ -179,7 +179,7 @@ public class TicketCheckerWorkAreaJPanel extends javax.swing.JPanel {
     private void populatetblFlt() {
         DefaultTableModel model = (DefaultTableModel) tblFlt.getModel();
         model.setRowCount(0);
-        for (RailLine al : system.getAirlineDirectory().getAirlineList()) {
+        for (RailLine al : system.getRailLineDirectory().getRailLineList()) {
             for(Train fl : al.getFlightList()){
                 if(fl.isReadyStatus()){
                     Object[] row = new Object[8];

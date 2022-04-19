@@ -6,7 +6,7 @@ package userinterface.CustomerRole;
 
 import Business.Airline.RailLine;
 import Business.Airline.Train;
-import Business.Customer.Customer;
+import Business.Customer.Passenger;
 import Business.EcoSystem;
 import Business.Order.Order;
 import Business.UserAccount.UserAccount;
@@ -228,13 +228,13 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         String aid = (String) tblFlt.getValueAt(selectedRow,5);
         String cos = (String) tblFlt.getValueAt(selectedRow,6);
         if(selectedRow>=0){
-            for(int i = 0;i < system.getAirlineDirectory().getAirlineList().size(); i++){
-                if(system.getAirlineDirectory().getAirlineList().get(i).getName().equals((String) tblFlt.getValueAt(selectedRow,7))){
-                    RailLine al = system.getAirlineDirectory().getAirlineList().get(i);
+            for(int i = 0;i < system.getRailLineDirectory().getRailLineList().size(); i++){
+                if(system.getRailLineDirectory().getRailLineList().get(i).getName().equals((String) tblFlt.getValueAt(selectedRow,7))){
+                    RailLine al = system.getRailLineDirectory().getRailLineList().get(i);
                     Order order1 = new Order(userAccount.getName(),fid, ori, des, dep, arr, aid, cos, al.getName(), cbInsurance.isSelected());
                     System.out.println(al.getOrderList());
                     //                            al.getOrderList().add(order1);
-                    for(Customer cust : system.getCustomerDirectory().getCustList()){
+                    for(Passenger cust : system.getCustomerDirectory().getCustList()){
                         if(cust.getName().equals(userAccount.getName())){
                             cust.addOrder(order1);
                         }
@@ -287,7 +287,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
     private void populatetblFlt() {
         DefaultTableModel model = (DefaultTableModel) tblFlt.getModel();
         model.setRowCount(0);
-        for (RailLine al : system.getAirlineDirectory().getAirlineList()) {
+        for (RailLine al : system.getRailLineDirectory().getRailLineList()) {
             for(Train fl : al.getFlightList()){
                 Object[] row = new Object[8];
                 row[0] = fl.getFlight_id();

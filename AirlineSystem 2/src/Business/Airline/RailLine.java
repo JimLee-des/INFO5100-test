@@ -5,7 +5,7 @@
  */
 package Business.Airline;
 
-import Business.Customer.Customer;
+import Business.Customer.Passenger;
 import Business.Order.Order;
 import java.util.ArrayList;
 import java.util.UUID;
@@ -54,7 +54,7 @@ public class RailLine {
         flight.setReadyStatus(false);
         flight.setCustomerStatus(false);
         flight.setAirline(airline);
-        flight.setCustomerList(new ArrayList<Customer>());
+        flight.setCustomerList(new ArrayList<Passenger>());
         flight.setTimeStatus(false);
         flightList.add(flight);
     }

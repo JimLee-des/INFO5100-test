@@ -7,7 +7,7 @@ package userinterface.SellerRole;
 
 import Business.Airline.RailLine;
 import Business.Airline.Train;
-import Business.Customer.Customer;
+import Business.Customer.Passenger;
 import Business.EcoSystem;
 import Business.Order.Order;
 import Business.UserAccount.UserAccount;
@@ -137,8 +137,8 @@ public class SellerWorkAreaJPanel extends javax.swing.JPanel {
     private void populatetblCus() {
         DefaultTableModel model = (DefaultTableModel) tblCus.getModel();
         model.setRowCount(0);
-        for (RailLine al : system.getAirlineDirectory().getAirlineList()) {
-            for(Customer cus : system.getCustomerDirectory().getCustList()){
+        for (RailLine al : system.getRailLineDirectory().getRailLineList()) {
+            for(Passenger cus : system.getCustomerDirectory().getCustList()){
                 for(Order order : al.getOrderList()){
                     if(order.getCustomerName().equals(cus.getName()) && order.isInsurance()){
                         Object[] row = new Object[4];

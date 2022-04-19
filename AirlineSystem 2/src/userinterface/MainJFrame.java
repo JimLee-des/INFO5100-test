@@ -31,7 +31,7 @@ public class MainJFrame extends javax.swing.JFrame {
 //        system = ConfigureASystem.configure();
         system = dB4OUtil.retrieveSystem();
         this.setSize(1000,600);
-        for(RailLine al : system.getAirlineDirectory().getAirlineList()){
+        for(RailLine al : system.getRailLineDirectory().getRailLineList()){
             if(al.getAircraftcrewList()==null){
                 continue;
             }else{

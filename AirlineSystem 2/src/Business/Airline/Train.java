@@ -5,7 +5,7 @@
  */
 package Business.Airline;
 
-import Business.Customer.Customer;
+import Business.Customer.Passenger;
 import java.util.ArrayList;
 
 
@@ -20,7 +20,7 @@ public class Train {
     private String rail_id;
     private String cost;
     private String departureTime;
-    private ArrayList<Customer> customerList;
+    private ArrayList<Passenger> customerList;
     private String arrivingTime;
     private String railLine;
 
@@ -40,11 +40,11 @@ public class Train {
         this.railLine = railLine;
     }
 
-    public ArrayList<Customer> getCustomerList() {
+    public ArrayList<Passenger> getCustomerList() {
         return customerList;
     }
 
-    public void setCustomerList(ArrayList<Customer> customerList) {
+    public void setCustomerList(ArrayList<Passenger> customerList) {
         this.customerList = customerList;
     }
 

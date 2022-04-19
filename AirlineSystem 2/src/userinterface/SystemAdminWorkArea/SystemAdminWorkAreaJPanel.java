@@ -6,7 +6,7 @@
 package userinterface.SystemAdminWorkArea;
 
 import Business.Airline.RailLine;
-import Business.Customer.Customer;
+import Business.Customer.Passenger;
 import Business.EcoSystem;
 
 import Business.Organization;

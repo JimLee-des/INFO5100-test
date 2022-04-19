@@ -335,7 +335,7 @@ public class ManageAirplaneJPanel extends javax.swing.JPanel {
         String airplane_id = txtAirplane_id.getText();
         String capacity = txtCapacity.getText();
         boolean rs = cbRepair.isSelected();
-        for (RailLine a1 : system.getAirlineDirectory().getAirlineList()) {
+        for (RailLine a1 : system.getRailLineDirectory().getRailLineList()) {
             if(a1.getName().equals(userAccount.getName())){
                 if (a1.checkIfAirplaneIsUnique(airplane_id)==false) {
                     JOptionPane.showMessageDialog(this,"It is already existing ");
@@ -357,7 +357,7 @@ public class ManageAirplaneJPanel extends javax.swing.JPanel {
         int selectedRow = tblAp.getSelectedRow();
         if(selectedRow>=0){
             String airplane_id = (String) tblAp.getValueAt(selectedRow, 0);
-            for (RailLine al : system.getAirlineDirectory().getAirlineList()) {
+            for (RailLine al : system.getRailLineDirectory().getRailLineList()) {
                 if(al.getName().equals(userAccount.getName())){
                     for(int i = 0; i< al.getAirplaneList().size(); i++){
                         if(al.getAirplaneList().get(i).getId().equals(airplane_id)){
@@ -385,7 +385,7 @@ public class ManageAirplaneJPanel extends javax.swing.JPanel {
         int selectRow = tblAp.getSelectedRow();
         String id = (String) tblAp.getValueAt(selectRow, 0);
 
-        for (RailLine al : system.getAirlineDirectory().getAirlineList()) {
+        for (RailLine al : system.getRailLineDirectory().getRailLineList()) {
             if(al.getName().equals(userAccount.getName())){
                 for(int i = 0; i< al.getAirplaneList().size(); i++){
                     if(al.getAirplaneList().get(i).getId().equals(id)){
@@ -439,7 +439,7 @@ public class ManageAirplaneJPanel extends javax.swing.JPanel {
         if(selectedRow>=0 && selectedRow1>=0){
             String id = (String) tblAp.getValueAt(selectedRow1,0);
             String fid = (String) tblFlt.getValueAt(selectedRow,0);
-            for (RailLine al : system.getAirlineDirectory().getAirlineList()) {
+            for (RailLine al : system.getRailLineDirectory().getRailLineList()) {
                 if(al.getName().equals(userAccount.getName())){
                     for(int i = 0; i< al.getAirplaneList().size(); i++){
                         for(int a = 0; a< al.getFlightList().size(); a++){
@@ -484,7 +484,7 @@ public class ManageAirplaneJPanel extends javax.swing.JPanel {
     private void populatetblFlt() {
         DefaultTableModel model = (DefaultTableModel) tblFlt.getModel();
         model.setRowCount(0);
-        for (RailLine al : system.getAirlineDirectory().getAirlineList()) {
+        for (RailLine al : system.getRailLineDirectory().getRailLineList()) {
             if(al.getName().equals(userAccount.getName())){
                 for(Train fl : al.getFlightList()){
                     if(fl.isStatus()==false){
@@ -507,7 +507,7 @@ public class ManageAirplaneJPanel extends javax.swing.JPanel {
     private void populatetblAp() {
         DefaultTableModel model = (DefaultTableModel) tblAp.getModel();
         model.setRowCount(0);
-        for (RailLine al : system.getAirlineDirectory().getAirlineList()){
+        for (RailLine al : system.getRailLineDirectory().getRailLineList()){
             if(al.getName().equals(userAccount.getName())){
                 for(Rail ap : al.getAirplaneList()){
                     Object[] row = new Object[4];

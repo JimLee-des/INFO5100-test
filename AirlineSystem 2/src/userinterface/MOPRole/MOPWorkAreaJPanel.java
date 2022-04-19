@@ -7,7 +7,7 @@ package userinterface.MOPRole;
 
 import Business.Airline.RailLine;
 import Business.Airline.Train;
-import Business.Customer.Customer;
+import Business.Customer.Passenger;
 import Business.EcoSystem;
 import Business.Order.Order;
 import Business.UserAccount.UserAccount;
@@ -144,10 +144,10 @@ public class MOPWorkAreaJPanel extends javax.swing.JPanel {
     private void populatetblCus() {
         DefaultTableModel model = (DefaultTableModel) tblCus.getModel();
         model.setRowCount(0);
-        for (RailLine al : system.getAirlineDirectory().getAirlineList()) {
+        for (RailLine al : system.getRailLineDirectory().getRailLineList()) {
             for(Train fl : al.getFlightList()){
                 for(Order order : al.getOrderList()){
-                    for(Customer cus : system.getCustomerDirectory().getCustList()){
+                    for(Passenger cus : system.getCustomerDirectory().getCustList()){
                         if(order.isStatus() && order.getCustomerName().equals(cus.getName()) && order.isInsurance() && fl.getFlight_id().equals(order.getRailNum_id()) && fl.isTimeStatus()==true){
                             Object[] row = new Object[4];
                             row[0] = cus.getName();

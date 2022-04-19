@@ -6,7 +6,7 @@
 package Business;
 
 
-import Business.Customer.CustomerDirectory;
+import Business.Customer.PassengerDirectory;
 import Business.Airline.RailLineDirectory;
 import Business.InsuranceCom.InsuranceComDirectory;
 import Business.Role.Role;
@@ -24,9 +24,9 @@ public class EcoSystem extends Organization{
     private RailLineDirectory railLineDirectory;
     private RailStationDirectory railStationDirectory;
     private InsuranceComDirectory insuranceComDirectory;
-    private CustomerDirectory customerDirectory;
+    private PassengerDirectory customerDirectory;
 
-    public EcoSystem(RailLineDirectory railLineDirectory, RailStationDirectory railStationDirectory, InsuranceComDirectory insuranceComDirectory, CustomerDirectory customerDirectory) {
+    public EcoSystem(RailLineDirectory railLineDirectory, RailStationDirectory railStationDirectory, InsuranceComDirectory insuranceComDirectory, PassengerDirectory customerDirectory) {
 
         this.railLineDirectory = railLineDirectory;
         this.railStationDirectory = railStationDirectory;
@@ -59,14 +59,14 @@ public class EcoSystem extends Organization{
        return false;
     }
 
-    public CustomerDirectory getCustomerDirectory() {
+    public PassengerDirectory getCustomerDirectory() {
         if(customerDirectory == null){
-            customerDirectory = new CustomerDirectory();
+            customerDirectory = new PassengerDirectory();
         }
         return customerDirectory;
     }
 
-    public void setCustomerDirectory(CustomerDirectory customerDirectory) {
+    public void setCustomerDirectory(PassengerDirectory customerDirectory) {
         this.customerDirectory = customerDirectory;
     }
 
