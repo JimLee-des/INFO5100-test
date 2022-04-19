@@ -4,7 +4,7 @@
  */
 package userinterface.CustomerRole;
 
-import Business.Airline.Airline;
+import Business.Airline.RailLine;
 import Business.Customer.Customer;
 import Business.EcoSystem;
 import Business.Order.Order;
@@ -135,7 +135,7 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
         if(selectedRow<0){
             JOptionPane.showMessageDialog(this,"Please select a row from the table to cancel","Warning",JOptionPane.WARNING_MESSAGE);
         }else{
-            for (Airline al : system.getAirlineDirectory().getAirlineList()){
+            for (RailLine al : system.getAirlineDirectory().getAirlineList()){
                 for (Order od : al.getOrderList()){
                     if(od.getOrder_id().equals((String) tblFlt.getValueAt(selectedRow, 6))){
                         al.deleteOrder(od.toString());

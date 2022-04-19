@@ -8,24 +8,21 @@ package Business.Airline;
 import Business.Customer.Customer;
 import java.util.ArrayList;
 
-/**
- *
- * @author 刘欣卓
- */
-public class Flight {
-    private String flight_id;
+
+public class Train {
+    private String railNum_id;
     private String originalplace;
     private String destinationplace;
     private boolean status;//是否出发
     private boolean readyStatus;//乘务组是否上飞机
     private boolean customerStatus;//检票员决定顾客是否已经全部上飞机
     private boolean timeStatus;//是否延误
-    private String airplane_id;
+    private String rail_id;
     private String cost;
     private String departureTime;
     private ArrayList<Customer> customerList;
     private String arrivingTime;
-    private String airline;
+    private String railLine;
 
     public boolean isTimeStatus() {
         return timeStatus;
@@ -36,11 +33,11 @@ public class Flight {
     }
 
     public String getAirline() {
-        return airline;
+        return railLine;
     }
 
-    public void setAirline(String airline) {
-        this.airline = airline;
+    public void setAirline(String railLine) {
+        this.railLine = railLine;
     }
 
     public ArrayList<Customer> getCustomerList() {
@@ -61,11 +58,11 @@ public class Flight {
 
     
     public String getFlight_id() {
-        return flight_id;
+        return railNum_id;
     }
 
-    public void setFlight_id(String flight_id) {
-        this.flight_id = flight_id;
+    public void setFlight_id(String railNum_id) {
+        this.railNum_id = railNum_id;
     }
 
     public String getOriginalplace() {
@@ -109,11 +106,11 @@ public class Flight {
     }
     
     public String getAirplane_id() {
-        return airplane_id;
+        return rail_id;
     }
 
-    public void setAirplane_id(String airplane_id) {
-        this.airplane_id = airplane_id;
+    public void setAirplane_id(String rail_id) {
+        this.rail_id = rail_id;
     }
 
     public String getCost() {
@@ -134,6 +131,6 @@ public class Flight {
     
     @Override
     public String toString(){
-        return flight_id;
+        return railNum_id;
     }
 }

@@ -4,8 +4,8 @@
  */
 package userinterface.CustomerRole;
 
-import Business.Airline.Airline;
-import Business.Airline.Flight;
+import Business.Airline.RailLine;
+import Business.Airline.Train;
 import Business.Customer.Customer;
 import Business.EcoSystem;
 import Business.Order.Order;
@@ -230,7 +230,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         if(selectedRow>=0){
             for(int i = 0;i < system.getAirlineDirectory().getAirlineList().size(); i++){
                 if(system.getAirlineDirectory().getAirlineList().get(i).getName().equals((String) tblFlt.getValueAt(selectedRow,7))){
-                    Airline al = system.getAirlineDirectory().getAirlineList().get(i);
+                    RailLine al = system.getAirlineDirectory().getAirlineList().get(i);
                     Order order1 = new Order(userAccount.getName(),fid, ori, des, dep, arr, aid, cos, al.getName(), cbInsurance.isSelected());
                     System.out.println(al.getOrderList());
                     //                            al.getOrderList().add(order1);
@@ -287,8 +287,8 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
     private void populatetblFlt() {
         DefaultTableModel model = (DefaultTableModel) tblFlt.getModel();
         model.setRowCount(0);
-        for (Airline al : system.getAirlineDirectory().getAirlineList()) {
-            for(Flight fl : al.getFlightList()){
+        for (RailLine al : system.getAirlineDirectory().getAirlineList()) {
+            for(Train fl : al.getFlightList()){
                 Object[] row = new Object[8];
                 row[0] = fl.getFlight_id();
                 row[1] = fl.getOriginalplace();

@@ -5,8 +5,8 @@
  */
 package userinterface.TicketCheckerRole;
 
-import Business.Airline.Airline;
-import Business.Airline.Flight;
+import Business.Airline.RailLine;
+import Business.Airline.Train;
 import Business.EcoSystem;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
@@ -140,8 +140,8 @@ public class TicketCheckerWorkAreaJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         int selectedRow = tblFlt.getSelectedRow();
         
-        for(Airline al : system.getAirlineDirectory().getAirlineList()){
-            for(Flight fl : al.getFlightList()){
+        for(RailLine al : system.getAirlineDirectory().getAirlineList()){
+            for(Train fl : al.getFlightList()){
                 if(fl.getFlight_id().equals((String) tblFlt.getValueAt(selectedRow, 0))){
                     fl.setCustomerStatus(true);
                     fl.setTimeStatus(cbTime.isSelected());
@@ -155,8 +155,8 @@ public class TicketCheckerWorkAreaJPanel extends javax.swing.JPanel {
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
         // TODO add your handling code here:
         int selectedRow = tblFlt.getSelectedRow();
-        for(Airline al : system.getAirlineDirectory().getAirlineList()){
-            for(Flight fl : al.getFlightList()){
+        for(RailLine al : system.getAirlineDirectory().getAirlineList()){
+            for(Train fl : al.getFlightList()){
                 if(fl.getFlight_id().equals((String) tblFlt.getValueAt(selectedRow, 0))){
                     CustomerListJPanel cljp = new CustomerListJPanel(mainScreen,fl,system);
                     mainScreen.add("CustomerListJPanel", cljp);
@@ -179,8 +179,8 @@ public class TicketCheckerWorkAreaJPanel extends javax.swing.JPanel {
     private void populatetblFlt() {
         DefaultTableModel model = (DefaultTableModel) tblFlt.getModel();
         model.setRowCount(0);
-        for (Airline al : system.getAirlineDirectory().getAirlineList()) {
-            for(Flight fl : al.getFlightList()){
+        for (RailLine al : system.getAirlineDirectory().getAirlineList()) {
+            for(Train fl : al.getFlightList()){
                 if(fl.isReadyStatus()){
                     Object[] row = new Object[8];
                     row[0] = fl.getFlight_id();

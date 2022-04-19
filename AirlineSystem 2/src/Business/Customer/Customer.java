@@ -8,10 +8,7 @@ package Business.Customer;
 import Business.Order.Order;
 import java.util.ArrayList;
 
-/**
- *
- * @author harold
- */
+
 public class Customer {
     private String Name;
     private ArrayList<Order> orderList;
@@ -72,7 +69,7 @@ public class Customer {
 
     public boolean checkIfOrderIsUnique(Order order){
         for(Order od : orderList){
-            if(od.get().equals(order.getFlight_id()) && od.isStatus()==false){
+            if(od.getRailNum_id().equals(order.getRailNum_id()) && od.isStatus()==false){
                 return true;
             }
         }

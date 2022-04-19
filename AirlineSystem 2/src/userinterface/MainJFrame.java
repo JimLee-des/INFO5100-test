@@ -4,8 +4,8 @@
  */
 package userinterface;
 
-import Business.Airline.AircraftCrew;
-import Business.Airline.Airline;
+import Business.Airline.RailCrew;
+import Business.Airline.RailLine;
 import Business.ConfigureASystem;
 import Business.EcoSystem;
 import Business.DB4OUtil.DB4OUtil;
@@ -31,11 +31,11 @@ public class MainJFrame extends javax.swing.JFrame {
 //        system = ConfigureASystem.configure();
         system = dB4OUtil.retrieveSystem();
         this.setSize(1000,600);
-        for(Airline al : system.getAirlineDirectory().getAirlineList()){
+        for(RailLine al : system.getAirlineDirectory().getAirlineList()){
             if(al.getAircraftcrewList()==null){
                 continue;
             }else{
-                for(AircraftCrew ac : al.getAircraftcrewList()){
+                for(RailCrew ac : al.getAircraftcrewList()){
                     System.out.println(ac);
                 }
             }

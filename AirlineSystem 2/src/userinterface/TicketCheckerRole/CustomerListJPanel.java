@@ -5,7 +5,7 @@
  */
 package userinterface.TicketCheckerRole;
 
-import Business.Airline.Flight;
+import Business.Airline.Train;
 import Business.Customer.Customer;
 import Business.EcoSystem;
 import Business.Order.Order;
@@ -20,9 +20,9 @@ public class CustomerListJPanel extends javax.swing.JPanel {
      * Creates new form CustomerListJPanel
      */
     private JPanel mainScreen;
-    private Flight flight;
+    private Train flight;
     private EcoSystem system;
-    public CustomerListJPanel(JPanel mainScreen, Flight flight, EcoSystem system) {
+    public CustomerListJPanel(JPanel mainScreen, Train flight, EcoSystem system) {
         initComponents();
         this.mainScreen = mainScreen;
         this.flight = flight;

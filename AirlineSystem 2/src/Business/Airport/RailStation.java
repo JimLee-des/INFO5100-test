@@ -5,10 +5,7 @@
  */
 package Business.Airport;
 
-/**
- *
- * @author 刘欣卓
- */
-public class Airport {
+
+public class RailStation {
     
 }

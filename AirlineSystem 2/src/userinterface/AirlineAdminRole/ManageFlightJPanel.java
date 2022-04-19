@@ -5,9 +5,9 @@
  */
 package userinterface.AirlineAdminRole;
 
-import Business.Airline.Airline;
-import Business.Airline.Airplane;
-import Business.Airline.Flight;
+import Business.Airline.RailLine;
+import Business.Airline.Rail;
+import Business.Airline.Train;
 import Business.EcoSystem;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
@@ -321,7 +321,7 @@ public class ManageFlightJPanel extends javax.swing.JPanel {
         String cos = txtCos.getText();
         int selectRow = tblFlt.getSelectedRow();
 
-        for (Airline al : system.getAirlineDirectory().getAirlineList()) {
+        for (RailLine al : system.getAirlineDirectory().getAirlineList()) {
             if(al.getName().equals(userAccount.getName())){
                 for(int i = 0; i<al.getFlightList().size(); i++){
                     if(al.getFlightList().get(i).getFlight_id().equals((String) tblFlt.getValueAt(selectRow, 0))){
@@ -396,7 +396,7 @@ public class ManageFlightJPanel extends javax.swing.JPanel {
         String arr = txtArr.getText();
         String cos = txtCos.getText();
 
-        for (Airline al : system.getAirlineDirectory().getAirlineList()) {
+        for (RailLine al : system.getAirlineDirectory().getAirlineList()) {
             if(al.getName().equals(userAccount.getName())){
                 if (al.checkIfFlightIsUnique(fid)==false) {
                     JOptionPane.showMessageDialog(this,"It is already existing ");
@@ -419,7 +419,7 @@ public class ManageFlightJPanel extends javax.swing.JPanel {
         int selectedRow = tblFlt.getSelectedRow();
         if(selectedRow>=0){
             String id = (String) tblFlt.getValueAt(selectedRow, 0);
-            for (Airline al : system.getAirlineDirectory().getAirlineList()) {
+            for (RailLine al : system.getAirlineDirectory().getAirlineList()) {
                 if(al.getName().equals(userAccount.getName())){
                     al.deleteFlight(id);
                 }
@@ -458,9 +458,9 @@ public class ManageFlightJPanel extends javax.swing.JPanel {
     private void populatetblFlt() {
         DefaultTableModel model = (DefaultTableModel) tblFlt.getModel();
         model.setRowCount(0);
-        for (Airline al : system.getAirlineDirectory().getAirlineList()) {
+        for (RailLine al : system.getAirlineDirectory().getAirlineList()) {
             if(al.getName().equals(userAccount.getName())){
-                for(Flight fl : al.getFlightList()){
+                for(Train fl : al.getFlightList()){
                     if(fl.isStatus()==false){
                         Object[] row = new Object[8];
                         row[0] = fl.getFlight_id();

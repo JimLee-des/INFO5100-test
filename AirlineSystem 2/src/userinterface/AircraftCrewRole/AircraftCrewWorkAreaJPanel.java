@@ -4,9 +4,9 @@
  */
 package userinterface.AircraftCrewRole;
 
-import Business.Airline.AircraftCrew;
-import Business.Airline.Airline;
-import Business.Airline.Flight;
+import Business.Airline.RailCrew;
+import Business.Airline.RailLine;
+import Business.Airline.Train;
 import Business.EcoSystem;
 import Business.UserAccount.UserAccount;
 import javax.swing.JOptionPane;
@@ -112,12 +112,12 @@ public class AircraftCrewWorkAreaJPanel extends javax.swing.JPanel {
     private void btnAssignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignActionPerformed
         // TODO add your handling code here:
         int selectedRow = tblFlt.getSelectedRow();
-        for(Airline al : system.getAirlineDirectory().getAirlineList()){
-            for(AircraftCrew ac : al.getAircraftcrewList()){
+        for(RailLine al : system.getAirlineDirectory().getAirlineList()){
+            for(RailCrew ac : al.getAircraftcrewList()){
                 if(ac.getName().equals(userAccount.getName())){
                     if(selectedRow>=0){
                         ac.setStatus("Working");
-                        for(Flight fl : al.getFlightList()){
+                        for(Train fl : al.getFlightList()){
                             if(fl.getFlight_id().equals((String) tblFlt.getValueAt(selectedRow, 0))){
                                 fl.setReadyStatus(true);
                                 ac.setFlight(fl.getFlight_id());
@@ -143,8 +143,8 @@ public class AircraftCrewWorkAreaJPanel extends javax.swing.JPanel {
     private void populatetblFlt() {
         DefaultTableModel model = (DefaultTableModel) tblFlt.getModel();
         model.setRowCount(0);
-        for (Airline al : system.getAirlineDirectory().getAirlineList()) {
-            for(Flight fl : al.getFlightList()){
+        for (RailLine al : system.getAirlineDirectory().getAirlineList()) {
+            for(Train fl : al.getFlightList()){
                 if(fl.getAirplane_id() != null && fl.isStatus()==false){
                     Object[] row = new Object[8];
                     row[0] = fl.getFlight_id();

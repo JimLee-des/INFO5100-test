@@ -5,8 +5,8 @@
  */
 package userinterface.SystemAdminWorkArea;
 
-import Business.Airline.Airline;
-import Business.Airline.Flight;
+import Business.Airline.RailLine;
+import Business.Airline.Train;
 import Business.Customer.Customer;
 import Business.EcoSystem;
 import Business.Order.Order;

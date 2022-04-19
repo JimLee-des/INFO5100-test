@@ -5,8 +5,8 @@
  */
 package userinterface.CommanderRole;
 
-import Business.Airline.Airline;
-import Business.Airline.Flight;
+import Business.Airline.RailLine;
+import Business.Airline.Train;
 import Business.Customer.Customer;
 import Business.EcoSystem;
 import Business.Order.Order;
@@ -122,8 +122,8 @@ public class CommanderWorkAreaJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         int selectedRow = tblFlt.getSelectedRow();
         
-        for(Airline al : system.getAirlineDirectory().getAirlineList()){
-            for(Flight fl : al.getFlightList()){
+        for(RailLine al : system.getAirlineDirectory().getAirlineList()){
+            for(Train fl : al.getFlightList()){
                 if(fl.getFlight_id().equals((String) tblFlt.getValueAt(selectedRow, 0))){
                     fl.setStatus(true);
                     for(Customer cus : fl.getCustomerList()){
@@ -149,8 +149,8 @@ public class CommanderWorkAreaJPanel extends javax.swing.JPanel {
     private void populatetblFlt() {
         DefaultTableModel model = (DefaultTableModel) tblFlt.getModel();
         model.setRowCount(0);
-        for (Airline al : system.getAirlineDirectory().getAirlineList()) {
-            for(Flight fl : al.getFlightList()){
+        for (RailLine al : system.getAirlineDirectory().getAirlineList()) {
+            for(Train fl : al.getFlightList()){
                 if(fl.isCustomerStatus()){
                     Object[] row = new Object[8];
                     row[0] = fl.getFlight_id();

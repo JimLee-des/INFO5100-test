@@ -5,7 +5,7 @@
  */
 package userinterface.SystemAdminWorkArea;
 
-import Business.Airline.Airline;
+import Business.Airline.RailLine;
 import Business.EcoSystem;
 import Business.Role.RailAdminRole;
 import Business.UserAccount.UserAccount;
@@ -245,7 +245,7 @@ public class ManageAirlineAdminJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this,"It is already existing ");
         }else{
             UserAccount ua1 =system.getUserAccountDirectory().createUserAccount(name, uname, password, new RailAdminRole());
-            Airline airline= system.getAirlineDirectory().createAirlineInfo(name);
+            RailLine airline= system.getAirlineDirectory().createAirlineInfo(name);
             populatetblAla();
             txtName.setText("");
             txtUsername.setText("");

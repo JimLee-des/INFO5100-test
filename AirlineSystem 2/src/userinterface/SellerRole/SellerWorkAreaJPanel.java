@@ -5,8 +5,8 @@
  */
 package userinterface.SellerRole;
 
-import Business.Airline.Airline;
-import Business.Airline.Flight;
+import Business.Airline.RailLine;
+import Business.Airline.Train;
 import Business.Customer.Customer;
 import Business.EcoSystem;
 import Business.Order.Order;
@@ -137,7 +137,7 @@ public class SellerWorkAreaJPanel extends javax.swing.JPanel {
     private void populatetblCus() {
         DefaultTableModel model = (DefaultTableModel) tblCus.getModel();
         model.setRowCount(0);
-        for (Airline al : system.getAirlineDirectory().getAirlineList()) {
+        for (RailLine al : system.getAirlineDirectory().getAirlineList()) {
             for(Customer cus : system.getCustomerDirectory().getCustList()){
                 for(Order order : al.getOrderList()){
                     if(order.getCustomerName().equals(cus.getName()) && order.isInsurance()){

@@ -5,17 +5,14 @@
  */
 package Business.Airline;
 
-/**
- *
- * @author 刘欣卓
- */
-public class Airplane {
+
+public class Rail {
     private String id;
     private String capacity;
     private boolean repairStatus;
     private boolean usingStatus;
     
-    public Airplane(String id, String capacity, boolean repairStatus){
+    public Rail(String id, String capacity, boolean repairStatus){
         this.id = id;
         this.capacity = capacity;
         this.repairStatus = repairStatus;

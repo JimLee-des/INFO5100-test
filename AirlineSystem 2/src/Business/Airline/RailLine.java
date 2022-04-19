@@ -11,18 +11,18 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 
-public class Airline {
-    private ArrayList<Airplane> airplaneList;
-    private ArrayList<Flight> flightList;
+public class RailLine {
+    private ArrayList<Rail> airplaneList;
+    private ArrayList<Train> flightList;
     private ArrayList<Order> orderList;
-    private ArrayList<AircraftCrew> aircraftcrewList;
+    private ArrayList<RailCrew> aircraftcrewList;
     private String name;
 
-    public ArrayList<AircraftCrew> getAircraftcrewList() {
+    public ArrayList<RailCrew> getAircraftcrewList() {
         return aircraftcrewList;
     }
 
-    public void setAircraftcrewList(ArrayList<AircraftCrew> aircraftcrewList) {
+    public void setAircraftcrewList(ArrayList<RailCrew> aircraftcrewList) {
         this.aircraftcrewList = aircraftcrewList;
     }
 
@@ -34,16 +34,16 @@ public class Airline {
         this.orderList = orderList;
     }
 
-    public ArrayList<Flight> getFlightList() {
+    public ArrayList<Train> getFlightList() {
         return flightList;
     }
 
-    public void setFlightList(ArrayList<Flight> flightList) {
+    public void setFlightList(ArrayList<Train> flightList) {
         this.flightList = flightList;
     }
     
     public void addFlight(String id, String originalplaceName, String destinationplaceName,String departureTime, String arrivingTime, String cost, String airline) {
-        Flight flight = new Flight();
+        Train flight = new Train();
         flight.setFlight_id(id);
         flight.setOriginalplace(originalplaceName);
         flight.setDestinationplace(destinationplaceName);
@@ -60,28 +60,28 @@ public class Airline {
     }
     
     public void addAircraftCrew(String name){
-        AircraftCrew ac = new AircraftCrew(name);
+        RailCrew ac = new RailCrew(name);
         aircraftcrewList.add(ac);
     }
     
-    public ArrayList<Airplane> getAirplaneList() {
+    public ArrayList<Rail> getAirplaneList() {
         return airplaneList;
     }
     
-    public void addAirplane(Airplane airplane){
+    public void addAirplane(Rail airplane){
         airplaneList.add(airplane);
     }
     
-    public void removeAirplane(Airplane airplane){
+    public void removeAirplane(Rail airplane){
         airplaneList.remove(airplane);
     }
     
-    public Airline(String Name) {
+    public RailLine(String Name) {
         this.name = Name;
-        airplaneList=new ArrayList<Airplane>();
-        flightList=new ArrayList<Flight>();
+        airplaneList=new ArrayList<Rail>();
+        flightList=new ArrayList<Train>();
         orderList = new ArrayList<Order>();
-        aircraftcrewList = new ArrayList<AircraftCrew>();
+        aircraftcrewList = new ArrayList<RailCrew>();
     }
     
     public String getName() {
@@ -149,7 +149,7 @@ public class Airline {
     }
     
     public boolean checkIfAircraftCrewIsUnique(String name){
-        for(AircraftCrew ac : aircraftcrewList){
+        for(RailCrew ac : aircraftcrewList){
             if(ac.getName().equals(name)){
                 return false;
             }
@@ -158,7 +158,7 @@ public class Airline {
     }
     
     public boolean checkIfFlightIsUnique(String flight_id){
-        for(Flight fl : flightList){
+        for(Train fl : flightList){
             if(fl.getFlight_id().equals(flight_id)){
                 return false;
             }
@@ -167,7 +167,7 @@ public class Airline {
     }
     
     public boolean checkIfAirplaneIsUnique(String airplane_id){
-        for (Airplane ap : airplaneList){
+        for (Rail ap : airplaneList){
             if (ap.getId().equals(airplane_id)){
                 return false;
             }      

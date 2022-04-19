@@ -5,8 +5,8 @@
  */
 package userinterface.AnnouncerRole;
 
-import Business.Airline.Airline;
-import Business.Airline.Flight;
+import Business.Airline.RailLine;
+import Business.Airline.Train;
 import Business.EcoSystem;
 import Business.UserAccount.UserAccount;
 import javax.swing.JOptionPane;
@@ -135,8 +135,8 @@ public class AnnouncerWorkAreaJPanel extends javax.swing.JPanel {
     private void populatetblFlt() {
         DefaultTableModel model = (DefaultTableModel) tblFlt.getModel();
         model.setRowCount(0);
-        for (Airline al : system.getAirlineDirectory().getAirlineList()) {
-            for(Flight fl : al.getFlightList()){
+        for (RailLine al : system.getAirlineDirectory().getAirlineList()) {
+            for(Train fl : al.getFlightList()){
                 if(fl.isReadyStatus()){
                     Object[] row = new Object[8];
                     row[0] = fl.getFlight_id();

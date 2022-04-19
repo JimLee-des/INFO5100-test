@@ -6,12 +6,12 @@
 package Business.Airline;
 
 
-public class AircraftCrew {
+public class RailCrew {
     private String name;
     private String status;
     private String flight;
 
-    public AircraftCrew(String name){
+    public RailCrew(String name){
         this.name = name;
         this.status = "Not Working";
         this.flight = "Not Assigned";
