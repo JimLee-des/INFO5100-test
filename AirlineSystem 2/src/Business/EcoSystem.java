@@ -7,12 +7,12 @@ package Business;
 
 
 import Business.Customer.PassengerDirectory;
-import Business.Airline.RailLineDirectory;
+import Business.Railline.RailLineDirectory;
 import Business.InsuranceCom.InsuranceComDirectory;
 import Business.Role.Role;
 import Business.Role.SystemAdminRole;
 import java.util.ArrayList;
-import Business.Airport.RailStationDirectory;
+import Business.RailStation.RailStationDirectory;
 
 /**
  *

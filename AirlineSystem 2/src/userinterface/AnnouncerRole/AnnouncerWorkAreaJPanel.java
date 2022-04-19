@@ -5,8 +5,8 @@
  */
 package userinterface.AnnouncerRole;
 
-import Business.Airline.RailLine;
-import Business.Airline.Train;
+import Business.Railline.RailLine;
+import Business.Railline.Train;
 import Business.EcoSystem;
 import Business.UserAccount.UserAccount;
 import javax.swing.JOptionPane;
@@ -139,12 +139,12 @@ public class AnnouncerWorkAreaJPanel extends javax.swing.JPanel {
             for(Train fl : al.getFlightList()){
                 if(fl.isReadyStatus()){
                     Object[] row = new Object[8];
-                    row[0] = fl.getFlight_id();
+                    row[0] = fl.getrailNum_id();
                     row[1] = fl.getOriginalplace();
                     row[2] = fl.getDestinationplace();
                     row[3] = fl.getDepartureTime();
                     row[4] = fl.getArrivingTime();
-                    row[5] = fl.getAirplane_id();
+                    row[5] = fl.getRail_id();
                     row[6] = fl.getCost();
                     row[7] = al.getName();
                     model.addRow(row);

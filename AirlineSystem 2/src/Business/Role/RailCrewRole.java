@@ -8,7 +8,7 @@ package Business.Role;
 import Business.EcoSystem;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
-import userinterface.AircraftCrewRole.AircraftCrewWorkAreaJPanel;
+import userinterface.RailCrewRole.AircraftCrewWorkAreaJPanel;
 
 
 public class RailCrewRole extends Role {

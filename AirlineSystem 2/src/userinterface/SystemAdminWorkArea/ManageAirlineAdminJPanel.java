@@ -5,7 +5,7 @@
  */
 package userinterface.SystemAdminWorkArea;
 
-import Business.Airline.RailLine;
+import Business.Railline.RailLine;
 import Business.EcoSystem;
 import Business.Role.RailAdminRole;
 import Business.UserAccount.UserAccount;

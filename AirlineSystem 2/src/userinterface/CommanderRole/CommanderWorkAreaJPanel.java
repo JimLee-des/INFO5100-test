@@ -5,8 +5,8 @@
  */
 package userinterface.CommanderRole;
 
-import Business.Airline.RailLine;
-import Business.Airline.Train;
+import Business.Railline.RailLine;
+import Business.Railline.Train;
 import Business.Customer.Passenger;
 import Business.EcoSystem;
 import Business.Order.Order;
@@ -124,9 +124,9 @@ public class CommanderWorkAreaJPanel extends javax.swing.JPanel {
         
         for(RailLine al : system.getRailLineDirectory().getRailLineList()){
             for(Train fl : al.getFlightList()){
-                if(fl.getFlight_id().equals((String) tblFlt.getValueAt(selectedRow, 0))){
+                if(fl.getrailNum_id().equals((String) tblFlt.getValueAt(selectedRow, 0))){
                     fl.setStatus(true);
-                    for(Passenger cus : fl.getCustomerList()){
+                    for(Passenger cus : fl.getPassengerList()){
                         for(Order order : cus.getOrderList()){
                             if(order.getRailNum_id().equals((String) tblFlt.getValueAt(selectedRow, 0))){
                                 order.setStatus(true);
@@ -153,12 +153,12 @@ public class CommanderWorkAreaJPanel extends javax.swing.JPanel {
             for(Train fl : al.getFlightList()){
                 if(fl.isCustomerStatus()){
                     Object[] row = new Object[8];
-                    row[0] = fl.getFlight_id();
+                    row[0] = fl.getrailNum_id();
                     row[1] = fl.getOriginalplace();
                     row[2] = fl.getDestinationplace();
                     row[3] = fl.getDepartureTime();
                     row[4] = fl.getArrivingTime();
-                    row[5] = fl.getAirplane_id();
+                    row[5] = fl.getRail_id();
                     row[6] = fl.getCost();
                     row[7] = al.getName();
                     model.addRow(row);

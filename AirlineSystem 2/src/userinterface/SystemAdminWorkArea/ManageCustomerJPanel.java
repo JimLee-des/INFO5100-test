@@ -5,12 +5,12 @@
  */
 package userinterface.SystemAdminWorkArea;
 
-import Business.Airline.RailLine;
-import Business.Airline.Train;
+import Business.Railline.RailLine;
+import Business.Railline.Train;
 import Business.Customer.Passenger;
 import Business.EcoSystem;
 import Business.Order.Order;
-import Business.Role.CustomerRole;
+import Business.Role.PassengerRole;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
@@ -282,7 +282,7 @@ public class ManageCustomerJPanel extends javax.swing.JPanel {
         if (system.getUserAccountDirectory().checkIfUsernameIsUnique(uname)==false) {
             JOptionPane.showMessageDialog(this,"It is already existed.");
         }else{
-            UserAccount ua1 =system.getUserAccountDirectory().createUserAccount(name, uname,password,new CustomerRole());
+            UserAccount ua1 =system.getUserAccountDirectory().createUserAccount(name, uname,password,new PassengerRole());
             Passenger cust= system.getCustomerDirectory().createCustomer(name, ppn, tn);
             populateTblCustomer();
             txtUsername.setText("");

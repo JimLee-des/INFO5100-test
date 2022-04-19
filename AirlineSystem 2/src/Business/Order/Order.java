@@ -19,10 +19,10 @@ public class Order {
     private String rail_id;
     private String cost;
     private boolean status;
-    private String airline;
+    private String railLine;
     private boolean insurance; 
 
-    public Order(String customerName, String railNum_id, String originalplace, String destinationplace, String departureTime, String arrivingTime,  String rail_id, String cost, String airline, boolean insurance) {
+    public Order(String customerName, String railNum_id, String originalplace, String destinationplace, String departureTime, String arrivingTime,  String rail_id, String cost, String railLine, boolean insurance) {
         this.customerName = customerName;
         this.railNum_id = railNum_id;
         this.originalplace = originalplace;
@@ -31,7 +31,7 @@ public class Order {
         this.arrivingTime = arrivingTime;
         this.rail_id = rail_id;
         this.cost = cost;
-        this.airline = airline;
+        this.railLine = railLine;
         this.insurance = insurance;
         this.order_id = getUUID();
         this.status = false;
@@ -124,12 +124,12 @@ public class Order {
         this.status = status;
     }
 
-    public String getAirline() {
-        return airline;
+    public String getrailLine() {
+        return railLine;
     }
 
-    public void setAirline(String airline) {
-        this.airline = airline;
+    public void setrailLine(String airline) {
+        this.railLine = airline;
     }
 
     public boolean isInsurance() {

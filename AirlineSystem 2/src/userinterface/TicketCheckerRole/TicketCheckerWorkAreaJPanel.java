@@ -5,8 +5,8 @@
  */
 package userinterface.TicketCheckerRole;
 
-import Business.Airline.RailLine;
-import Business.Airline.Train;
+import Business.Railline.RailLine;
+import Business.Railline.Train;
 import Business.EcoSystem;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
@@ -142,7 +142,7 @@ public class TicketCheckerWorkAreaJPanel extends javax.swing.JPanel {
         
         for(RailLine al : system.getRailLineDirectory().getRailLineList()){
             for(Train fl : al.getFlightList()){
-                if(fl.getFlight_id().equals((String) tblFlt.getValueAt(selectedRow, 0))){
+                if(fl.getrailNum_id().equals((String) tblFlt.getValueAt(selectedRow, 0))){
                     fl.setCustomerStatus(true);
                     fl.setTimeStatus(cbTime.isSelected());
                     JOptionPane.showMessageDialog(this,"All set, you can depart now.");
@@ -157,7 +157,7 @@ public class TicketCheckerWorkAreaJPanel extends javax.swing.JPanel {
         int selectedRow = tblFlt.getSelectedRow();
         for(RailLine al : system.getRailLineDirectory().getRailLineList()){
             for(Train fl : al.getFlightList()){
-                if(fl.getFlight_id().equals((String) tblFlt.getValueAt(selectedRow, 0))){
+                if(fl.getrailNum_id().equals((String) tblFlt.getValueAt(selectedRow, 0))){
                     CustomerListJPanel cljp = new CustomerListJPanel(mainScreen,fl,system);
                     mainScreen.add("CustomerListJPanel", cljp);
                     CardLayout layout = (CardLayout) mainScreen.getLayout();
@@ -183,12 +183,12 @@ public class TicketCheckerWorkAreaJPanel extends javax.swing.JPanel {
             for(Train fl : al.getFlightList()){
                 if(fl.isReadyStatus()){
                     Object[] row = new Object[8];
-                    row[0] = fl.getFlight_id();
+                    row[0] = fl.getrailNum_id();
                     row[1] = fl.getOriginalplace();
                     row[2] = fl.getDestinationplace();
                     row[3] = fl.getDepartureTime();
                     row[4] = fl.getArrivingTime();
-                    row[5] = fl.getAirplane_id();
+                    row[5] = fl.getRail_id();
                     row[6] = fl.getCost();
                     row[7] = al.getName();
                     model.addRow(row);

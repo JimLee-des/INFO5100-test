@@ -8,7 +8,7 @@ package Business.Role;
 import Business.EcoSystem;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
-import userinterface.AirlineAdminRole.AirlineAdminWorkAreaJPanel;
+import userinterface.RaillineAdminRole.RaillineAdminWorkAreaJPanel;
 
 public class RailAdminRole extends Role{
     
@@ -19,6 +19,6 @@ public class RailAdminRole extends Role{
     @Override
     public JPanel createWorkArea(JPanel mainScreen, UserAccount userAccount, EcoSystem system) {
         this.type = Role.RoleType.RailAdmin;
-        return new AirlineAdminWorkAreaJPanel(mainScreen, userAccount, system);
+        return new RaillineAdminWorkAreaJPanel(mainScreen, userAccount, system);
     }
 }

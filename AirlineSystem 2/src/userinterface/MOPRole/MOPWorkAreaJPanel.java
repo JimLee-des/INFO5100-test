@@ -5,8 +5,8 @@
  */
 package userinterface.MOPRole;
 
-import Business.Airline.RailLine;
-import Business.Airline.Train;
+import Business.Railline.RailLine;
+import Business.Railline.Train;
 import Business.Customer.Passenger;
 import Business.EcoSystem;
 import Business.Order.Order;
@@ -148,7 +148,7 @@ public class MOPWorkAreaJPanel extends javax.swing.JPanel {
             for(Train fl : al.getFlightList()){
                 for(Order order : al.getOrderList()){
                     for(Passenger cus : system.getCustomerDirectory().getCustList()){
-                        if(order.isStatus() && order.getCustomerName().equals(cus.getName()) && order.isInsurance() && fl.getFlight_id().equals(order.getRailNum_id()) && fl.isTimeStatus()==true){
+                        if(order.isStatus() && order.getCustomerName().equals(cus.getName()) && order.isInsurance() && fl.getrailNum_id().equals(order.getRailNum_id()) && fl.isTimeStatus()==true){
                             Object[] row = new Object[4];
                             row[0] = cus.getName();
                             row[1] = cus.getTelNum();

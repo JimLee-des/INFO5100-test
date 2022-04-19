@@ -5,8 +5,8 @@
  */
 package userinterface.SellerRole;
 
-import Business.Airline.RailLine;
-import Business.Airline.Train;
+import Business.Railline.RailLine;
+import Business.Railline.Train;
 import Business.Customer.Passenger;
 import Business.EcoSystem;
 import Business.Order.Order;

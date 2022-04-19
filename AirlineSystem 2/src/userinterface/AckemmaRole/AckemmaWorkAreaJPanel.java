@@ -5,8 +5,8 @@
  */
 package userinterface.AckemmaRole;
 
-import Business.Airline.RailLine;
-import Business.Airline.Rail;
+import Business.Railline.RailLine;
+import Business.Railline.Rail;
 import Business.EcoSystem;
 import Business.UserAccount.UserAccount;
 import javax.swing.JOptionPane;
@@ -171,7 +171,7 @@ public class AckemmaWorkAreaJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) tblAp.getModel();
         model.setRowCount(0);
         for (RailLine al : system.getRailLineDirectory().getRailLineList()){
-                for(Rail ap : al.getAirplaneList()){
+                for(Rail ap : al.getRailList()){
                     Object[] row = new Object[4];
                     row[0] = ap.getId();
                     row[1] = ap.getCapacity();

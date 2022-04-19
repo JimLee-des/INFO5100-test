@@ -4,7 +4,7 @@
  */
 package userinterface.CustomerRole;
 
-import Business.Airline.RailLine;
+import Business.Railline.RailLine;
 import Business.Customer.Passenger;
 import Business.EcoSystem;
 import Business.Order.Order;
@@ -174,7 +174,7 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
                     row[4] = od.getDepartureTime();
                     row[5] = od.getArrivingTime();
                     row[6] = od.getCost();
-                    row[7] = od.getAirline();
+                    row[7] = od.getrailLine();
                     row[8] = od.getOrder_id();
                     row[9] = od.isStatus()? "Done" : "Processing";
                     model.addRow(row);

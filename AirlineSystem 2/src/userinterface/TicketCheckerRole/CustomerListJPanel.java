@@ -5,7 +5,7 @@
  */
 package userinterface.TicketCheckerRole;
 
-import Business.Airline.Train;
+import Business.Railline.Train;
 import Business.Customer.Passenger;
 import Business.EcoSystem;
 import Business.Order.Order;
@@ -20,12 +20,12 @@ public class CustomerListJPanel extends javax.swing.JPanel {
      * Creates new form CustomerListJPanel
      */
     private JPanel mainScreen;
-    private Train flight;
+    private Train train;
     private EcoSystem system;
-    public CustomerListJPanel(JPanel mainScreen, Train flight, EcoSystem system) {
+    public CustomerListJPanel(JPanel mainScreen, Train train, EcoSystem system) {
         initComponents();
         this.mainScreen = mainScreen;
-        this.flight = flight;
+        this.train = train;
         this.system = system;
         populatetblCus();
     }
@@ -114,13 +114,13 @@ public class CustomerListJPanel extends javax.swing.JPanel {
     private void populatetblCus() {
         DefaultTableModel model = (DefaultTableModel) tblCus.getModel();
         model.setRowCount(0);
-        for(Passenger cus : flight.getCustomerList()){
+        for(Passenger cus : train.getPassengerList()){
             Object[] row = new Object[4];
             row[0] = cus.getName();
             row[1] = cus.getPassportNum();
             row[2] = cus.getTelNum();
             for(Order order : cus.getOrderList()){
-                if(order.getRailNum_id().equals(flight.getFlight_id())){
+                if(order.getRailNum_id().equals(train.getrailNum_id())){
                     row[3] = order.isInsurance() ? "Bought" : "Not Bought";
                 }
             }
